@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>dev.finance$</title>
+
+    <!-- Import CSS -->
+    <link rel="stylesheet" href="./css/styles.css">
+
+    <!-- Import Font Poppins -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,400;0,700;1,100;1,400;1,700&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <!-- Header -->
+    <header>
+        <!-- Logo Dev Finance -->
+        <img src="./assets/logo.svg" alt="Logo Dev Finance">
+    </header>
+
+    <!-- Main -->
+    <main class="container">
+        <!-- Section Balance -->
+        <section id="balance">
+            <h2 class="sr-only">Balanço</h2>
+            <!-- Card Income -->
+            <div class="card">
+                <h3>
+                    <span>Entradas</span>
+                    <img src="./assets/income.svg" alt="Image de entradas">
+                </h3>
+                <p id="incomeDisplay">R$ 0,00</p>
+            </div>
+            <!-- Card Expense -->
+            <div class="card">
+                <h3>
+                    <span>Saídas</span>
+                    <img src="./assets/expense.svg" alt="Image de Saídas">
+                </h3>
+                <p id="expenseDisplay">R$ 0,00</p>
+            </div>
+            <!-- Card Total  -->
+            <div class="card total">
+                <h3>
+                    <span>Total</span>
+                    <img src="./assets/total.svg" alt="">
+                </h3>
+                <p id="totalDisplay">R$ 0,00</p>
+            </div>
+        </section>
+
+        <!-- Section Transactions -->
+        <section id="transactions">
+            <h2 class="sr-only">Transações</h2>
+
+            <!-- New Transactions - Open Modal-->
+            <a href="#" class="button new" onclick="Modal.open()">+ Nova Transação</a>
+
+            <!-- Table Transactions -->
+            <table id="data-table">
+                <thead>
+                    <tr>
+                        <th>Descrição</th>
+                        <th>Valor</th>
+                        <th>Data</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <!-- Imported from JavaScript -->
+                <tbody>
+                </tbody>
+            </table>
+        </section>
+    </main>
+
+    <!-- Modal -->
+    <div class="modal-overlay">
+        <div class="modal-content">
+            <div id="form">
+                <h2>Nova Transação</h2>
+                <!-- Form -->
+                <form action="" method="GET" onsubmit="Form.submit(event)">
+                    <!-- Input Description -->
+                    <div class="input-group">
+                        <label for="description" class="sr-only">Descrição</label>
+                        <input type="text" name="description" id="description" placeholder="Descrição">
+                    </div>
+                    <!-- Input Amount -->
+                    <div class="input-group">
+                        <label for="amount" class="sr-only">Valor</label>
+                        <input type="number" name="amount" id="amount" placeholder="0,00" step="1">
+                        <small class="help">Use o sinal - (negativo) para despesas e , (vírgula) para casas
+                            decimais</small>
+                    </div>
+                    <!-- Input Date -->
+                    <div class="input-group">
+                        <label for="date" class="sr-only">Data</label>
+                        <input type="date" name="date" id="date" placeholder="dd/mm/aaaa">
+                    </div>
+                    <!-- Buttons Cancel and Save -->
+                    <div class="input-group actions">
+                        <a href="#" class="button cancel" onclick="Modal.close()">Cancelar</a>
+                        <button>Salvar</button>
+                    </div>
+                </form>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>dev.finance$</p>
+    </footer>
+
+    <!-- Import Script -->
+    <script src="./script/script.js"></script>
+</body>
+
+</html>
